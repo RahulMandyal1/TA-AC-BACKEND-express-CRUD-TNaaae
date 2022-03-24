@@ -1,16 +1,18 @@
-const express  = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
-// telling  the application which view engine we are going to use 
-app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'views'));
+const path = require("path");
+let studentsRoutes = require("./routes/students");
+// telling  the application which view engine we are going to use
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-app.use((req ,res ,next)=>{
-    res.locals.list  = { list: ["ankit", "suraj", "prashant", "ravi"] };
-})
-// now requiring the routes 
-app.use('/students',require('./routes/students'))
+//Some middelware  to parse form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// now requiring the routes
+app.use("/students", studentsRoutes);
 // server is listening on the port 2k21
-app.listen(2021 ,()=>{
-    console.log('Server is running on  the port 2K21');
-})
+app.listen(2000, () => {
+  console.log("Server is running on  the port 2K21");
+});
