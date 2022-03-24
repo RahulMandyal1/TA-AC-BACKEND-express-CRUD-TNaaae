@@ -2,7 +2,7 @@ const express = require('express');
 let router = express.Router();
 //display all the users  here.....
 router.get('/',(req ,res)=>{
-    res.fetch('users',{list : ['Rahul thakur' ,'Akash sisodiya' , 'Adarash Raj' ,'Aman']});
+    res.render('users',{ list: ["ankit", "suraj", "prashant", "ravi"] });
 })
 // display a single user here .....
 router.get('/:id',(req ,res)=>{
@@ -12,12 +12,12 @@ router.get('/:id',(req ,res)=>{
     //            res.json(usedata);
     //  })
     //  res.send('Delete the use successfully from the database');
-    res.fetch('singleUser',{name : "Rahul thakur" , email : "iamrahul079@gamil.com"});
+    res.render('singleUser',{ name: "rahul", email: "rahul@altcampus.io" });
 })
 // Create a new user  here we have to display a user form 
 router.get('/new',(req ,res)=>{
 
-    res.fetch('userForm');
+    res.render('userForm');
 })
 
 router.delete('/:id',(req ,res)=>{
@@ -37,4 +37,4 @@ router.put('/:id',(req ,res)=>{
     //  })
      res.send('Delete the use successfully from the database');
 })
-exports.module = router;
+module.exports = router;
