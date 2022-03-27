@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit user</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <form action="/users/<%= user._id%>" method="POST" class="user-form">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter the username here"
+            value="<%= user.name %>"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter the email here"
+            value="<%= user.email %>"
+          />
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Enter Your age here ..."
+            value="<%= user.age %>"
+          />
+          <input
+            type="text"
+            name="bio"
+            id="bio"
+            placeholder="Enter Your bio here ..."
+            value="<%= user.bio %>"
+          />
+          <input
+            type="text"
+            name="hobbies"
+            id="hobbies"
+            placeholder="Enter Your hobbies here ..."
+            value="<%= user.hobbies %>"
+          />
+          <input type="submit" value="submit" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
