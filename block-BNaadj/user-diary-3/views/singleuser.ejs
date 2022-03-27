@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get a single user and perform some operations</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>user age</th>
+              <th>Bio</th>
+              <th>hobbies</th>
+              <th>update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= user.name%></td>
+              <td><%= user.email%></td>
+              <td><%= user.age%></td>
+              <td><%= user.bio%></td>
+              <td><%= user.hobbies%></td>
+              <td>
+                <a href="/users/<%= user._id%>/edit" class="btn"> Edit </a>
+              </td>
+              <td>
+                <a href="/users/<%= user._id%>/delete" class="btn delete-btn">
+                  Delete
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
